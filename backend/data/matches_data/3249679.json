@@ -1,0 +1,382 @@
+[
+  {
+    "teamId": 10004,
+    "teamName": "Millwall",
+    "bench": [
+      {
+        "id": "1099938",
+        "name": "Ryan Sandford",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/1099938.png",
+        "pageUrl": "/players/1099938",
+        "shirt": 31,
+        "positionRow": 0,
+        "role": "Keeper"
+      },
+      {
+        "id": "443970",
+        "name": "Mahlon Romeo",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/443970.png",
+        "pageUrl": "/players/443970",
+        "shirt": 12,
+        "positionRow": 0,
+        "role": "Defender"
+      },
+      {
+        "id": "287892",
+        "name": "Jed Wallace",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/287892.png",
+        "pageUrl": "/players/287892",
+        "shirt": 7,
+        "positionRow": 0,
+        "role": "Midfielder"
+      },
+      {
+        "id": "212157",
+        "name": "Jiri Skalak",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/212157.png",
+        "pageUrl": "/players/212157",
+        "shirt": 26,
+        "positionRow": 0,
+        "role": "Midfielder"
+      },
+      {
+        "id": "156019",
+        "name": "Shaun Hutchinson",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/156019.png",
+        "pageUrl": "/players/156019",
+        "shirt": 4,
+        "positionRow": 0,
+        "role": "Midfielder"
+      },
+      {
+        "id": "202369",
+        "name": "Jon Dadi B\u00f6dvarsson",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/202369.png",
+        "pageUrl": "/players/202369",
+        "shirt": 23,
+        "positionRow": 0,
+        "role": "Attacker"
+      },
+      {
+        "id": "169225",
+        "name": "Tom Bradshaw",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/169225.png",
+        "pageUrl": "/players/169225",
+        "shirt": 9,
+        "positionRow": 0,
+        "role": "Attacker"
+      }
+    ],
+    "coach": [
+      {
+        "id": "482126",
+        "name": "Gary Rowett",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/482126.png",
+        "pageUrl": "/players/482126",
+        "positionRow": null,
+        "role": "Coach"
+      }
+    ],
+    "players": [
+      [
+        {
+          "id": "31920",
+          "name": "Bartosz Bialkowski",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/31920.png",
+          "pageUrl": "/players/31920",
+          "shirt": 33,
+          "positionRow": 0,
+          "role": "Keeper"
+        }
+      ],
+      [
+        {
+          "id": "254473",
+          "name": "Murray Wallace",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/254473.png",
+          "pageUrl": "/players/254473",
+          "shirt": 3,
+          "positionRow": 1,
+          "role": "Defender"
+        },
+        {
+          "id": "568577",
+          "name": "Jake Cooper",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/568577.png",
+          "pageUrl": "/players/568577",
+          "shirt": 5,
+          "positionRow": 1,
+          "role": "Defender"
+        },
+        {
+          "id": "49709",
+          "name": "Alex Pearce",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/49709.png",
+          "pageUrl": "/players/49709",
+          "shirt": 15,
+          "positionRow": 1,
+          "role": "Defender"
+        },
+        {
+          "id": "798598",
+          "name": "James Brown",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/798598.png",
+          "pageUrl": "/players/798598",
+          "shirt": 17,
+          "positionRow": 1,
+          "role": "Defender"
+        }
+      ],
+      [
+        {
+          "id": "174326",
+          "name": "Shane Ferguson",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/174326.png",
+          "pageUrl": "/players/174326",
+          "shirt": 11,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "789574",
+          "name": "Jayson Molumby",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/789574.png",
+          "pageUrl": "/players/789574",
+          "shirt": 16,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "1045656",
+          "name": "Billy Mitchell",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/1045656.png",
+          "pageUrl": "/players/1045656",
+          "shirt": 42,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "484856",
+          "name": "Connor Mahoney",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/484856.png",
+          "pageUrl": "/players/484856",
+          "shirt": 21,
+          "positionRow": 3,
+          "role": "Midfielder"
+        }
+      ],
+      [
+        {
+          "id": "279485",
+          "name": "Aiden O'Brien",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/279485.png",
+          "pageUrl": "/players/279485",
+          "shirt": 22,
+          "positionRow": 4,
+          "role": "Attacker"
+        }
+      ],
+      [
+        {
+          "id": "279830",
+          "name": "Matt Smith",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/279830.png",
+          "pageUrl": "/players/279830",
+          "shirt": 10,
+          "positionRow": 5,
+          "role": "Attacker"
+        }
+      ]
+    ],
+    "lineup": "4 - 4 - 1 - 1"
+  },
+  {
+    "teamId": 8657,
+    "teamName": "Sheffield United",
+    "bench": [
+      {
+        "id": "564585",
+        "name": "Michael Verrips",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/564585.png",
+        "pageUrl": "/players/564585",
+        "shirt": 21,
+        "positionRow": 0,
+        "role": "Keeper"
+      },
+      {
+        "id": "202181",
+        "name": "Jack Robinson",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/202181.png",
+        "pageUrl": "/players/202181",
+        "shirt": 19,
+        "positionRow": 0,
+        "role": "Defender"
+      },
+      {
+        "id": "295062",
+        "name": "John Egan",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/295062.png",
+        "pageUrl": "/players/295062",
+        "shirt": 12,
+        "positionRow": 0,
+        "role": "Defender"
+      },
+      {
+        "id": "429955",
+        "name": "John Lundstram",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/429955.png",
+        "pageUrl": "/players/429955",
+        "shirt": 7,
+        "positionRow": 0,
+        "role": "Defender"
+      },
+      {
+        "id": "231804",
+        "name": "Ravel Morrison",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/231804.png",
+        "pageUrl": "/players/231804",
+        "shirt": 14,
+        "positionRow": 0,
+        "role": "Midfielder"
+      },
+      {
+        "id": "23342",
+        "name": "Leon Clarke",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/23342.png",
+        "pageUrl": "/players/23342",
+        "shirt": 24,
+        "positionRow": 0,
+        "role": "Attacker"
+      },
+      {
+        "id": "509151",
+        "name": "Oliver McBurnie",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/509151.png",
+        "pageUrl": "/players/509151",
+        "shirt": 9,
+        "positionRow": 0,
+        "role": "Attacker"
+      }
+    ],
+    "coach": [
+      {
+        "id": "510644",
+        "name": "Chris Wilder",
+        "imageUrl": "https://images.fotmob.com/image_resources/playerimages/510644.png",
+        "pageUrl": "/players/510644",
+        "positionRow": null,
+        "role": "Coach"
+      }
+    ],
+    "players": [
+      [
+        {
+          "id": "23229",
+          "name": "Billy Sharp",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/23229.png",
+          "pageUrl": "/players/23229",
+          "shirt": 10,
+          "positionRow": 5,
+          "role": "Attacker"
+        },
+        {
+          "id": "504085",
+          "name": "Callum Robinson",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/504085.png",
+          "pageUrl": "/players/504085",
+          "shirt": 11,
+          "positionRow": 5,
+          "role": "Attacker"
+        }
+      ],
+      [
+        {
+          "id": "214574",
+          "name": "Kieron Freeman",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/214574.png",
+          "pageUrl": "/players/214574",
+          "shirt": 18,
+          "positionRow": 3,
+          "role": "Defender"
+        },
+        {
+          "id": "212866",
+          "name": "Muhamed Besic",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/212866.png",
+          "pageUrl": "/players/212866",
+          "shirt": 27,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "210971",
+          "name": "Oliver Norwood",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/210971.png",
+          "pageUrl": "/players/210971",
+          "shirt": 16,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "106954",
+          "name": "Luke Freeman",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/106954.png",
+          "pageUrl": "/players/106954",
+          "shirt": 8,
+          "positionRow": 3,
+          "role": "Midfielder"
+        },
+        {
+          "id": "511032",
+          "name": "Ben Osborn",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/511032.png",
+          "pageUrl": "/players/511032",
+          "shirt": 23,
+          "positionRow": 3,
+          "role": "Midfielder"
+        }
+      ],
+      [
+        {
+          "id": "113772",
+          "name": "Chris Basham",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/113772.png",
+          "pageUrl": "/players/113772",
+          "shirt": 6,
+          "positionRow": 1,
+          "role": "Defender"
+        },
+        {
+          "id": "23268",
+          "name": "Phil Jagielka",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/23268.png",
+          "pageUrl": "/players/23268",
+          "shirt": 15,
+          "positionRow": 1,
+          "role": "Defender"
+        },
+        {
+          "id": "410364",
+          "name": "Jack O'Connell",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/410364.png",
+          "pageUrl": "/players/410364",
+          "shirt": 5,
+          "positionRow": 1,
+          "role": "Defender"
+        }
+      ],
+      [
+        {
+          "id": "719330",
+          "name": "Dean Henderson",
+          "imageUrl": "https://images.fotmob.com/image_resources/playerimages/719330.png",
+          "pageUrl": "/players/719330",
+          "shirt": 1,
+          "positionRow": 0,
+          "role": "Keeper"
+        }
+      ]
+    ],
+    "lineup": "3 - 5 - 2"
+  }
+]
