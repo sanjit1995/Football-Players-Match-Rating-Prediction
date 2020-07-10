@@ -1,15 +1,16 @@
 import React from 'react';
+import './App.css';
 
 // Handles all active row input data
 export const RowInput = (props) => (
-    <td align='center'>
+    <td align='center' style={{padding: "2px"}}>
         <input
             type={props.type}
             name={props.name}
             value={props.value}
             onChange={props.onChange}
             onClick={props.onClick}
-            style={{ width: props.width }}
+            style={{ width: props.width, padding: "4px"}}
             disabled={props.disabled}
             checked={(props.value==="Yes")}
             height={'100px'}
@@ -19,19 +20,21 @@ export const RowInput = (props) => (
 
 export const RoleInput = (props) => (
     <td align='center'>
-        <select value={props.value} onChange={props.onChange}>
-            <option value="">--- select ---</option>
-            <option value="Keeper">Keeper</option>
-            <option value="Defender">Defender</option>
-            <option value="Midfielder">Midfielder</option>
-            <option value="Attacker">Attacker</option>
-        </select>
+        <div className={"box"}>
+            <select value={props.value} onChange={props.onChange}>
+                <option value="">--- select ---</option>
+                <option value="Keeper">Keeper</option>
+                <option value="Defender">Defender</option>
+                <option value="Midfielder">Midfielder</option>
+                <option value="Attacker">Attacker</option>
+            </select>
+        </div>
     </td>
 );
 
 // Handles all frozen rows data
 export const RowItem = (props) => (
-    <td align='center'>
+    <td align='center' style={{padding: "4px", fontFamily: "trebuchetMS", fontSize: "14px", fontStretch: "2px"}}>
         <span> {props.value} </span>
     </td>
 );
@@ -42,7 +45,7 @@ export const TableHeader = (props) => (
         <tr>
             {
                 props.values.map((value, idx) => (
-                    <th key={idx} className="text-center" style={{paddingTop: "60px"}}>{value}</th>
+                    <th key={idx} className="text-center" style={{ fontFamily: "trebuchetMS", fontSize: "14px", fontStretch: "2px"}}>{value}</th>
                 ))
             }
         </tr>
@@ -52,7 +55,7 @@ export const TableHeader = (props) => (
 // Handles Response Header section in the web-page
 export const ResponseMessage = (props) => (
     <p align='center'>
-        {props.value}
+        {props.value ? alert(props.value) : ""}
     </p>
 );
 

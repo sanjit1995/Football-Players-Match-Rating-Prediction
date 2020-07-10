@@ -266,8 +266,12 @@ class App extends React.Component {
             console.log(response)
           })
           .catch((error) => {
-            console.log(error.message)
-            this.setResponseHeader(error.message)
+            const error_message = error.message
+            console.log(error_message)
+            this.setState({
+                screenLoading: false,
+                responseMessage: error_message
+            });
           });
     }
   }
@@ -302,9 +306,9 @@ class App extends React.Component {
           {!this.state.responseReceived ? (
               <div>
             <DocumentHeader
-              value={"Football Players Data"}
+              value={"Player Match Rating Predictor"}
             />
-          <table className="table table-striped" id="players_match_data">
+          <table className="table table-striped" id="players_match_data_request" style={{paddingTop: "62px", background: "#D9DBDC"}}>
             <TableHeader
               values={["Role", "Name", "Minutes Played", "Diving Saves", "Goals Conceded By Goalkeeper", "Punches", "Saves", "Saves Inside Box",
               "Total Throws", "Passes", "Accurate Passes", "Assists", "Goals", "Chances Created", "Total Shots", "Blocked Shots", "Shots On Target",
@@ -684,12 +688,13 @@ class App extends React.Component {
                   min={0}
               />
               <RowInput
-                  type="radio"
+                  type="number"
                   name="was_fouled"
                   value={this.state.currentInput.was_fouled}
                   disabled = {this.state.allRowsDisabled}
-                  onClick = {this.storeRadioInput}
+                  onChange = {this.storeInput}
                   width={80}
+                  min={0}
               />
               <RowInput
                   type="radio"
@@ -739,25 +744,23 @@ class App extends React.Component {
             </tr>
           </tbody>
         </table>
-          <div style={{ textAlign: "left", paddingLeft: "5px"}}>
-            <div style={{ display: "inline-block" }}>
+          <div style={{ textAlign: "left", paddingTop: "430px"}}>
               <button
                   onClick={this.submitAll}
                   className="submit"
                   style={{
-                    width: "400px", background: "#4CAF50", color: "white", cursor: "pointer", border: "none",
-                    margin: "4px 2px", padding: "8px 16px", boxSizing: "border-box", alignContent: 'center'
+                    width: "100%", background: "#0B273F", color: "white", cursor: "pointer", border: "none", height: "50px",
+                    margin: "4px 2px", padding: "8px 16px", boxSizing: "border-box", alignContent: 'left', position: "fixed", fontSize: "16px"
                   }}>
-                Submit
+                Get Ratings
               </button>
-            </div>
           </div>
               </div>) : (
             <div>
               <DocumentHeader
               value={"Football Players Data"}
             />
-          <table className="table table-striped" id="players_match_data">
+          <table className="table table-striped" id="players_match_data_response" style={{paddingTop: "62px", background: "#D9DBDC"}}>
             <TableHeader
               values={["Role", "Name", "Minutes Played", "Diving Saves", "Goals Conceded By Goalkeeper", "Punches", "Saves", "Saves Inside Box",
               "Total Throws", "Passes", "Accurate Passes", "Assists", "Goals", "Chances Created", "Total Shots", "Blocked Shots", "Shots On Target",

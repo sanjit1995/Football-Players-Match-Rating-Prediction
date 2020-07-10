@@ -42,10 +42,16 @@ def getRating():
             test_keeper.at[0, 'saves'] = player_data['saves']
             test_keeper.at[0, 'saves_inside_box'] = player_data['saves_inside_box']
             test_keeper.at[0, 'throws'] = player_data['total_throws']
-            test_keeper.at[0, 'pass_success'] = (float(player_data['accurate_passes']) / float(player_data['passes']))
             test_keeper.at[0, 'accurate_passes'] = player_data['accurate_passes']
+            if str(player_data['passes']) == str(0):
+                test_keeper.at[0, 'pass_success'] = float(0)
+            else:
+                test_keeper.at[0, 'pass_success'] = (float(player_data['accurate_passes']) / float(player_data['passes']))
             test_keeper.at[0, 'total_shots'] = player_data['total_shots']
-            test_keeper.at[0, 'shot_accuracy'] = (float(player_data['shot_on_target']) / float(player_data['total_shots']))
+            if str(player_data['total_shots']) == str(0):
+                test_keeper.at[0, 'shot_accuracy'] = float(0)
+            else:
+                test_keeper.at[0, 'shot_accuracy'] = (float(player_data['shot_on_target']) / float(player_data['total_shots']))
             test_keeper.at[0, 'shot_off_target'] = player_data['shot_off_target']
             test_keeper.at[0, 'shot_on_target'] = player_data['shot_on_target']
             test_keeper.at[0, 'accurate_long_balls'] = player_data['accurate_long_balls']
@@ -105,10 +111,16 @@ def getRating():
             test_player.at[0, 'assists'] = player_data['assists']
             test_player.at[0, 'chances_created'] = player_data['chances_created']
             test_player.at[0, 'goals'] = player_data['goals']
-            test_player.at[0, 'pass_success'] = (float(player_data['accurate_passes']) / float(player_data['passes']))
+            if str(player_data['passes']) == str(0):
+                test_player.at[0, 'pass_success'] = float(0)
+            else:
+                test_player.at[0, 'pass_success'] = (float(player_data['accurate_passes']) / float(player_data['passes']))
             test_player.at[0, 'total_shots'] = player_data['total_shots']
             test_player.at[0, 'blocked_shots'] = player_data['blocked_shots']
-            test_player.at[0, 'shot_accuracy'] = (float(player_data['shot_on_target']) / float(player_data['total_shots']))
+            if str(player_data['total_shots']) == str(0):
+                test_player.at[0, 'shot_accuracy'] = float(0)
+            else:
+                test_player.at[0, 'shot_accuracy'] = (float(player_data['shot_on_target']) / float(player_data['total_shots']))
             test_player.at[0, 'shot_off_target'] = player_data['shot_off_target']
             test_player.at[0, 'shot_on_target'] = player_data['shot_on_target']
             test_player.at[0, 'accurate_long_balls'] = player_data['accurate_long_balls']
