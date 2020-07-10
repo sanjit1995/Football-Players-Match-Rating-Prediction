@@ -209,13 +209,13 @@ class App extends React.Component {
     });
   }
 
-  // To set the response header message
-  setResponseHeader = (msg) => {
-    console.log(this.state)
-    this.setState({
-      responseMessage: msg
-    })
-  }
+  // // To set the response header message
+  // setResponseHeader = (msg) => {
+  //   console.log(this.state)
+  //   this.setState({
+  //     responseMessage: msg
+  //   })
+  // }
 
   submitAll = () => {
     if (!this.validRowsData()) {

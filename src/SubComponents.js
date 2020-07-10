@@ -45,7 +45,9 @@ export const TableHeader = (props) => (
         <tr>
             {
                 props.values.map((value, idx) => (
-                    <th key={idx} className="text-center" style={{ fontFamily: "trebuchetMS", fontSize: "14px", fontStretch: "2px"}}>{value}</th>
+                    <th key={idx} className="text-center" style={{ fontFamily: "trebuchetMS", fontSize: "14px", fontStretch: "2px"}}>
+                        {value}
+                    </th>
                 ))
             }
         </tr>
