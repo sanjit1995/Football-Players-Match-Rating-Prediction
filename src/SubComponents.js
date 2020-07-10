@@ -8,9 +8,11 @@ export const RowInput = (props) => (
             name={props.name}
             value={props.value}
             onChange={props.onChange}
-            style={{ width: "100%", border: "1px solid #ccc", borderRadius: "4px", padding: "6px 10px",
-                    display: "inline-block", boxSizing: "border-box"}}
+            onClick={props.onClick}
+            style={{ width: props.width }}
             disabled={props.disabled}
+            checked={(props.value==="Yes")}
+            height={'100px'}
         />
     </td>
 );
@@ -18,11 +20,11 @@ export const RowInput = (props) => (
 export const RoleInput = (props) => (
     <td align='center'>
         <select value={props.value} onChange={props.onChange}>
-            <option value="">--- select an option ---</option>
+            <option value="">--- select ---</option>
             <option value="Keeper">Keeper</option>
             <option value="Defender">Defender</option>
             <option value="Midfielder">Midfielder</option>
-            <option value="Attacker">Forward</option>
+            <option value="Attacker">Attacker</option>
         </select>
     </td>
 );
@@ -36,11 +38,11 @@ export const RowItem = (props) => (
 
 // Handles Table Header section in the web-page
 export const TableHeader = (props) => (
-    <thead style={{ backgroundColor: "#FF7A33", color: 'white', tableLayout: "auto", width: "180px" }}>
+    <thead style={{ backgroundColor: 'gainsboro', color: 'black', tableLayout: "auto", width: "180px", border: "auto", fontSize: "14px"}}>
         <tr>
             {
                 props.values.map((value, idx) => (
-                    <th key={idx} className="text-center">{value}</th>
+                    <th key={idx} className="text-center" style={{paddingTop: "60px"}}>{value}</th>
                 ))
             }
         </tr>
@@ -57,8 +59,8 @@ export const ResponseMessage = (props) => (
 // Handles Document Header section in the web-page
 export const DocumentHeader = (props) => (
     <div
-    border="1px solid #black" style={{ fontSize:"30px", justifyContent:'center', backgroundColor: "#f6f8fa", color: 'red'}}
-    align='center'>
+    style={{ fontSize:"40px", justifyContent:'center', color: 'white', backgroundColor: "#3B3B38", width: "100%", position: "fixed", top: "0"}}
+    align='center' >
         {props.value}
     </div>
 );
