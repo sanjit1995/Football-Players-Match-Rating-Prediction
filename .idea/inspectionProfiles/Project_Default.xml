@@ -8,7 +8,7 @@
     <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="ignoredPackages">
         <value>
-          <list size="18">
+          <list size="21">
             <item index="0" class="java.lang.String" itemvalue="pydantic" />
             <item index="1" class="java.lang.String" itemvalue="mod-wsgi" />
             <item index="2" class="java.lang.String" itemvalue="asgiref" />
@@ -27,6 +27,9 @@
             <item index="15" class="java.lang.String" itemvalue="uvicorn" />
             <item index="16" class="java.lang.String" itemvalue="djangorestframework" />
             <item index="17" class="java.lang.String" itemvalue="websockets" />
+            <item index="18" class="java.lang.String" itemvalue="scipy" />
+            <item index="19" class="java.lang.String" itemvalue="json" />
+            <item index="20" class="java.lang.String" itemvalue="pickle" />
           </list>
         </value>
       </option>
