@@ -1,0 +1,1 @@
+web: gunicorn backend.backend_flask:app --log-file -

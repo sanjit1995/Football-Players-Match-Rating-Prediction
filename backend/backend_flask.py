@@ -1,12 +1,16 @@
 # Import Libraries
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import json
 import pickle
 import numpy as np
 
 # Define app variable
-app = Flask(__name__)
+app = Flask(__name__, template_folder='./build', static_folder='./build/static', static_url_path='/')
+
+@app.route('/')
+def render_react():
+    return render_template("index.html")
 
 # Define function for /getRating route
 @app.route('/getRating', methods=['POST'])

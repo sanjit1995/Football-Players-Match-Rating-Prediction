@@ -18,9 +18,10 @@ export const RowInput = (props) => (
     </td>
 );
 
+// Handles the Role Option
 export const RoleInput = (props) => (
     <td align='center'>
-        <div className={"box"}>
+        <div className={"box"} style={{padding: "2px"}}>
             <select value={props.value} onChange={props.onChange}>
                 <option value="">--- select ---</option>
                 <option value="Keeper">Keeper</option>
@@ -54,7 +55,7 @@ export const TableHeader = (props) => (
     </thead>
 );
 
-// Handles Response Header section in the web-page
+// Handles Response Header Section in the Web-Page
 export const ResponseMessage = (props) => (
     <p align='center'>
         {props.value ? alert(props.value) : ""}
