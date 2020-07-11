@@ -6,7 +6,7 @@ import pickle
 import numpy as np
 
 # Define app variable
-app = Flask(__name__, template_folder='./backend/build', static_folder='./backend/build/static', static_url_path='/')
+app = Flask(__name__, template_folder='./build', static_folder='./build/static', static_url_path='/')
 
 @app.route('/')
 def render_react():
