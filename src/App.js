@@ -45,7 +45,7 @@ function getInitialState() {
         recoveries: "",
         tackles_attempted: "",
         tackles_succeeded: "",
-        was_fouled: "No",
+        was_fouled: "",
         is_a_sub: "No",
         was_subbed: "No",
         yellow_card: "No",
@@ -53,6 +53,29 @@ function getInitialState() {
         rating: ""
     };
 }
+
+//console.log(Object.keys(getInitialState()))
+const keeper_specific_fields = [
+    "diving_save", "goals_conceded", "punches", "saves", "saves_inside_box", "total_throws"
+]
+const player_specific_fields = [
+    "chances_created", "goals", "crosses", "blocked_shots"
+]
+const all_fields = Object.keys(getInitialState())
+all_fields.pop()
+console.log(all_fields.length)
+const keeper_fields = []
+const player_fields = []
+for (let i = 0; i < all_fields.length; i++) {
+    if (player_specific_fields.indexOf(all_fields[i]) === -1) {
+        keeper_fields.push(all_fields[i])
+    }
+    if (keeper_specific_fields.indexOf(all_fields[i]) === -1) {
+        player_fields.push(all_fields[i])
+    }
+}
+console.log(keeper_fields)
+console.log(player_fields)
 
 // Main App class, an ES6 class to define a component. Comes with a render() function which renders changes
 // automatically
@@ -85,23 +108,23 @@ class App extends React.Component {
     validInput = () => {
         const {currentInput} = this.state;
         if (this.state.role === "") {
-            return false
+            return 0
         } else if (this.state.role === "Keeper") {
-            return currentInput.name && currentInput.diving_save && currentInput.goals_conceded && currentInput.minutes_played && currentInput.punches
-                && currentInput.saves && currentInput.saves_inside_box && currentInput.total_throws && currentInput.accurate_passes && currentInput.total_shots
-                && currentInput.shot_off_target && currentInput.shot_on_target && currentInput.accurate_long_balls && currentInput.key_passes
-                && currentInput.long_balls && currentInput.passes && currentInput.touches && currentInput.aerials_lost && currentInput.aerials_won
-                && currentInput.clearances && currentInput.dispossessed && currentInput.dribbles_attempted && currentInput.dribbles_succeeded
-                && currentInput.duels_lost && currentInput.duels_won && currentInput.fouls && currentInput.interceptions && currentInput.recoveries
-                && currentInput.tackles_attempted && currentInput.tackles_succeeded;
+            for (let fields of keeper_fields) {
+                console.log(currentInput[fields])
+                if (currentInput[fields].length < 0) {
+                    return 0
+                }
+            }
+            return 1
         } else {
-            return currentInput.name && currentInput.assists && currentInput.chances_created && currentInput.minutes_played && currentInput.goals
-                && currentInput.crosses && currentInput.blocked_shots && currentInput.accurate_passes && currentInput.total_shots
-                && currentInput.shot_off_target && currentInput.shot_on_target && currentInput.accurate_long_balls && currentInput.key_passes
-                && currentInput.long_balls && currentInput.passes && currentInput.touches && currentInput.aerials_lost && currentInput.aerials_won
-                && currentInput.clearances && currentInput.dispossessed && currentInput.dribbles_attempted && currentInput.dribbles_succeeded
-                && currentInput.duels_lost && currentInput.duels_won && currentInput.fouls && currentInput.interceptions && currentInput.recoveries
-                && currentInput.tackles_attempted && currentInput.tackles_succeeded;
+            for (let fields of player_fields) {
+                console.log(currentInput[fields])
+                if (currentInput[fields].length < 0) {
+                    return 0
+                }
+            }
+            return 1
         }
     }
 
@@ -143,27 +166,27 @@ class App extends React.Component {
 
     checkDataValidity = () => {
         const currentRow = this.state.currentInput
-        if (currentRow.minutes_played < 1 || currentRow.minutes_played > 120) {
+        if (parseInt(currentRow.minutes_played) < 1 || parseInt(currentRow.minutes_played) > 120) {
             alert("Minutes played cannot be less than 1 or more than 120")
             return false
         }
-        if (currentRow.accurate_passes > currentRow.passes) {
+        if (parseInt(currentRow.accurate_passes) > parseInt(currentRow.passes)) {
             alert("Accurate Passes cannot be more than no. of Passes")
             return false
         }
-        if ((currentRow.blocked_shots > currentRow.total_shots) || (currentRow.shot_on_target > currentRow.total_shots) || (currentRow.shot_off_target > currentRow.total_shots)) {
+        if ((parseInt(currentRow.blocked_shots) > parseInt(currentRow.total_shots)) || (parseInt(currentRow.shot_on_target) > parseInt(currentRow.total_shots)) || (parseInt(currentRow.shot_off_target) > parseInt(currentRow.total_shots))) {
             alert("No. of Blocked Shots, Shots On Target and Shots Off Target cannot be more than Total Shots")
             return false
         }
-        if (currentRow.accurate_long_balls > currentRow.long_balls) {
+        if (parseInt(currentRow.accurate_long_balls) > parseInt(currentRow.long_balls)) {
             alert("Accurate Long Balls cannot be more than no. of Long Balls")
             return false
         }
-        if (currentRow.dribbles_succeeded > currentRow.dribbles_attempted) {
+        if (parseInt(currentRow.dribbles_succeeded) > parseInt(currentRow.dribbles_attempted)) {
             alert("Dribbles Succeeded cannot be more than Dribbles Attempted")
             return false
         }
-        if (currentRow.tackles_succeeded > currentRow.tackles_attempted) {
+        if (parseInt(currentRow.tackles_succeeded) > parseInt(currentRow.tackles_attempted)) {
             alert("Tackles Succeeded cannot be more than Tackles Attempted")
             return false
         } else {
@@ -339,7 +362,7 @@ class App extends React.Component {
                                     value={"Player Match Rating Predictor"}
                                 />
                                 <table className="table table-striped" id="players_match_data_request"
-                                       style={{paddingTop: "62px"}}>
+                                       style={{marginTop: "62px"}}>
                                     <TableHeader
                                         values={["Role", "Name", "Minutes Played", "Diving Saves", "Goals Conceded By Goalkeeper", "Punches", "Saves", "Saves Inside Box",
                                             "Total Throws", "Passes", "Accurate Passes", "Assists", "Goals", "Chances Created", "Total Shots", "Blocked Shots", "Shots On Target",
@@ -766,10 +789,12 @@ class App extends React.Component {
                                         </td>
                                         <td style={{textAlign: "center"}}>
                                             {this.validInput() ? (
-                                                <button onClick={this.submitInput} style={{fontSize: "18px"}}>
+                                                <button onClick={this.submitInput}
+                                                        style={{fontSize: "14px", padding: "2px"}}>
                                                     Confirm
                                                 </button>) : (
-                                                <button onClick={this.removeCurrentInput} style={{fontSize: "14px", padding: "2px"}}>
+                                                <button onClick={this.removeCurrentInput}
+                                                        style={{fontSize: "14px", padding: "2px"}}>
                                                     Clear
                                                 </button>
                                             )}
@@ -777,7 +802,7 @@ class App extends React.Component {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", paddingTop: "430px"}}>
+                                <div style={{textAlign: "left", marginTop: "450px", position: "absolute"}}>
                                     <button
                                         onClick={this.submitAll}
                                         className="submit"
@@ -861,25 +886,26 @@ class App extends React.Component {
                                     ))}
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", paddingLeft: "5px"}}>
-                                    <div style={{display: "inline-block"}}>
-                                        <button
-                                            onClick={this.resetScreen}
-                                            className="submit"
-                                            style={{
-                                                width: "400px",
-                                                background: "#4CAF50",
-                                                color: "white",
-                                                cursor: "pointer",
-                                                border: "none",
-                                                margin: "4px 2px",
-                                                padding: "8px 16px",
-                                                boxSizing: "border-box",
-                                                alignContent: 'left'
-                                            }}>
-                                            Enter New Data
-                                        </button>
-                                    </div>
+                                <div style={{textAlign: "left", marginTop: "450px", position: "absolute"}}>
+                                    <button
+                                        onClick={this.resetScreen}
+                                        className="submit"
+                                        style={{
+                                            width: "100%",
+                                            background: "#0B273F",
+                                            color: "white",
+                                            cursor: "pointer",
+                                            border: "none",
+                                            height: "50px",
+                                            margin: "4px 2px",
+                                            padding: "8px 16px",
+                                            boxSizing: "border-box",
+                                            alignContent: 'left',
+                                            position: "fixed",
+                                            fontSize: "16px"
+                                        }}>
+                                        Enter New Data
+                                    </button>
                                 </div>
                             </div>)}
                         <ResponseMessage

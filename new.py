@@ -5,12 +5,6 @@ import json
 import pickle
 import numpy as np
 
-print(pd.__version__)
-print(json.__version__)
-print(pickle.__version__)
-exit(0)
-
-
 import pandas as pd
 import pickle
 from sklearn.preprocessing import MinMaxScaler
