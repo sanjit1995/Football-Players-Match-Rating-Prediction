@@ -2,7 +2,7 @@
   "name": "football_players_rating_predictor",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://player-match-rating-predictor.herokuapp.com/",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -32,6 +32,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy" : "http://127.0.0.1:5000/",
   "devDependencies": {
     "react-loading": "^2.0.3"
   }
