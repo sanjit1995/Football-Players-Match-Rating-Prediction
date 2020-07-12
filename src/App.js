@@ -801,7 +801,7 @@ class App extends React.Component {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", paddingTop: "450px", position: "fixed"}}>
+                                <div style={{bottom: "55px", position: "absolute"}}>
                                     <button
                                         onClick={this.submitAll}
                                         className="submit"
@@ -884,7 +884,7 @@ class App extends React.Component {
                                     ))}
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", paddingTop: "450px", position: "fixed"}}>
+                                <div style={{bottom: "55px", position: "absolute"}}>
                                     <button
                                         onClick={this.resetScreen}
                                         className="submit"
