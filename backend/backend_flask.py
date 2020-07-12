@@ -15,8 +15,7 @@ def render_react():
 # Define function for /getRating route
 @app.route('/getRating', methods=['POST'])
 def getRating():
-    print(request.get_json())
-    print(json.dumps(request))
+    print(request.json)
     with open('/app/backend/models/scaler_model_from_pickle1.pkl', 'rb') as fs:
         scaler = pickle.load(fs)
     with open('/app/backend/models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
@@ -28,8 +27,7 @@ def getRating():
     # player_model = joblib.load(r'models/player_model_xgb.pkl')
     keeper_train_dtypes_dict = {'accurate_long_balls': 'int64','accurate_passes': 'int64','aerials_lost': 'int64','aerials_won': 'int64','clearances': 'int64','dispossessed': 'int64','diving_save': 'int64','dribbles_attempted': 'int64','dribbles_succeeded': 'int64','duels_lost': 'int64','duels_won': 'int64','fouls': 'int64','goals_conceded': 'int64','interceptions': 'int64','is_a_sub': 'int64','key_passes': 'int64','long_balls': 'int64','minutes_played': 'float64','pass_success': 'float64','passes': 'int64','punches': 'int64','recoveries': 'int64','red_card': 'int64','saves': 'int64','saves_inside_box': 'int64','shot_accuracy': 'float64','shot_off_target': 'int64','shot_on_target': 'int64','tackles_attempted': 'int64','tackles_succeeded': 'int64','throws': 'int64','total_shots': 'int64','touches': 'int64','was_fouled': 'int64','was_subbed': 'int64','yellow_card': 'int64'}
     player_train_dtypes_dict = {'accurate_long_balls': 'int64','accurate_passes': 'int64','aerials_lost': 'int64','aerials_won': 'int64','assists': 'int64','blocked_shots': 'int64','chances_created': 'int64','clearances': 'int64', 'crosses': 'int64', 'dispossessed': 'int64', 'dribbles_attempted': 'int64', 'dribbles_succeeded': 'int64', 'duels_lost': 'int64', 'duels_won': 'int64', 'fouls': 'int64', 'goals': 'int64', 'interceptions': 'int64', 'is_a_sub': 'int64', 'key_passes': 'int64', 'long_balls': 'int64', 'minutes_played': 'float64', 'pass_success': 'float64', 'passes': 'int64', 'recoveries': 'int64', 'red_card': 'int64', 'role_Attacker': 'uint8', 'role_Defender': 'uint8', 'role_Midfielder': 'uint8', 'shot_accuracy': 'float64', 'shot_off_target': 'int64', 'shot_on_target': 'int64', 'tackles_attempted': 'int64', 'tackles_succeeded': 'int64', 'total_shots': 'int64', 'touches': 'int64', 'was_fouled': 'int64', 'was_subbed': 'int64', 'yellow_card': 'int64'}
-    #players_data = request.json
-    players_data = json.dumps(request)
+    players_data = request.json
     final_players_data = []
     for player_data in players_data:
         if player_data['role'] == 'Keeper':
