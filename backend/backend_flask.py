@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, render_template
 import pandas as pd
 import pickle
 import numpy as np
+import json
 
 # Define app variable
 app = Flask(__name__, template_folder='./build', static_folder='./build/static', static_url_path='/static')
@@ -14,7 +15,7 @@ def render_react():
 # Define function for /getRating route
 @app.route('/getRating', methods=['POST'])
 def getRating():
-    #print(request.json)
+    print(request.json)
     with open('/app/backend/models/scaler_model_from_pickle1.pkl', 'rb') as fs:
         scaler = pickle.load(fs)
     with open('/app/backend/models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
