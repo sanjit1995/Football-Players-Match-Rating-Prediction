@@ -292,7 +292,6 @@ class App extends React.Component {
                 cache: "no-cache",
                 headers: {
                     "content-type": "application/json",
-                    "Content-Type": "application/json",
                     "accept": "*/*",
                     "connection": "keep-alive"
                 },
