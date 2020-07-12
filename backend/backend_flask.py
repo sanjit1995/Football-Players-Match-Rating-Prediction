@@ -15,11 +15,11 @@ def render_react():
 @app.route('/getRating', methods=['POST'])
 def getRating():
     #print(request.json)
-    with open('./models/scaler_model_from_pickle1.pkl', 'rb') as fs:
+    with open('/app/backend/models/scaler_model_from_pickle1.pkl', 'rb') as fs:
         scaler = pickle.load(fs)
-    with open('./models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
+    with open('/app/backend/models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
         keeper_model = pickle.load(fk)
-    with open('./models/player_model_xgb_from_pickle1.pkl', 'rb') as fp:
+    with open('/app/backend/models/player_model_xgb_from_pickle1.pkl', 'rb') as fp:
         player_model = pickle.load(fp)
     # scaler = joblib.load(r'models/scaler_minutes_played.pkl')
     # keeper_model = joblib.load(r'models/keeper_model_svr.pkl')
