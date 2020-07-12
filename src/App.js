@@ -59,7 +59,7 @@ const keeper_specific_fields = [
     "diving_save", "goals_conceded", "punches", "saves", "saves_inside_box", "total_throws"
 ]
 const player_specific_fields = [
-    "chances_created", "goals", "crosses", "blocked_shots"
+    "chances_created", "goals", "crosses", "blocked_shots", "assists"
 ]
 const all_fields = Object.keys(getInitialState())
 all_fields.pop()
@@ -106,20 +106,17 @@ class App extends React.Component {
 
     // To check if all the required parameters are entered
     validInput = () => {
-        const {currentInput} = this.state;
+        const currentInput = this.state.currentInput;
         if (this.state.role === "") {
             return 0
         }
         else if (this.state.role === "Keeper") {
             let keeper_count = 0
             for (let fields of keeper_fields) {
-                console.log(currentInput[fields])
                 if (currentInput[fields].length > 0) {
-                    keeper_count += 1
+                    keeper_count++
                 }
             }
-            console.log(keeper_count)
-            console.log(keeper_fields.length)
             if (keeper_count === keeper_fields.length){
                 return 1
             }
@@ -130,13 +127,10 @@ class App extends React.Component {
         else {
             let player_count = 0
             for (let fields of player_fields) {
-                console.log(currentInput[fields])
                 if (currentInput[fields].length > 0) {
-                    player_count += 1
+                    player_count++
                 }
             }
-            console.log(player_count)
-            console.log(player_fields.length)
             if (player_count === player_fields.length){
                 return 1
             }
@@ -265,7 +259,7 @@ class App extends React.Component {
             allRowsDisabledTemp = false
             keeperRowsDisabledTemp = true;
         }
-        const currentInput = this.state.currentInput;
+        const currentInput = getInitialState();
         currentInput['role'] = value;
         this.setState((state, props) => {
             const {rows, currentInputTemp, role, allRowsDisabled, keeperRowsDisabled, responseMessage} = state;
