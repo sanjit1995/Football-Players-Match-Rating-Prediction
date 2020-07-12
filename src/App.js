@@ -118,6 +118,8 @@ class App extends React.Component {
                     keeper_count += 1
                 }
             }
+            console.log(keeper_count)
+            console.log(keeper_fields.length)
             if (keeper_count === keeper_fields.length){
                 return 1
             }
@@ -133,6 +135,8 @@ class App extends React.Component {
                     player_count += 1
                 }
             }
+            console.log(player_count)
+            console.log(player_fields.length)
             if (player_count === player_fields.length){
                 return 1
             }
