@@ -291,7 +291,9 @@ class App extends React.Component {
                 method: "POST",
                 cache: "no-cache",
                 headers: {
-                    "content_type": "application/json",
+                    "content-type": "application/json",
+                    "accept": "*/*",
+                    "connection": "keep-alive"
                 },
                 body: body_data
             })
