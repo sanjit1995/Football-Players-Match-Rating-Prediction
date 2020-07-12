@@ -15,6 +15,7 @@ def render_react():
 # Define function for /getRating route
 @app.route('/getRating', methods=['POST'])
 def getRating():
+    print(request.get_json())
     print(request.json)
     with open('/app/backend/models/scaler_model_from_pickle1.pkl', 'rb') as fs:
         scaler = pickle.load(fs)
