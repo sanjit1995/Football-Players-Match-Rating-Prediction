@@ -278,7 +278,7 @@ class App extends React.Component {
             console.log(this.state)
             console.log("Sending request")
 
-            // To convert the data into an XML request
+            // To convert Object to json
             const body_data = JSON.stringify(this.state.rows)
             console.log(body_data)
 
