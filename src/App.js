@@ -418,9 +418,8 @@ class App extends React.Component {
                                             <RowItem value={row.red_card}/>
                                             <td/>
                                             <td style={{textAlign: "center"}}>
-                                                <button onClick={() => {
-                                                    this.handleRemoveRow(idx)
-                                                }}>
+                                                <button onClick={() => {this.handleRemoveRow(idx)}}
+                                                        style={{fontSize: "14px", padding: "2px"}}>
                                                     Clear
                                                 </button>
                                             </td>
@@ -804,7 +803,7 @@ class App extends React.Component {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", marginTop: "450px", position: "absolute"}}>
+                                <div style={{textAlign: "left", marginTop: "450px", position: "fixed"}}>
                                     <button
                                         onClick={this.submitAll}
                                         className="submit"
@@ -888,7 +887,7 @@ class App extends React.Component {
                                     ))}
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", marginTop: "450px", position: "absolute"}}>
+                                <div style={{textAlign: "left", marginTop: "450px", position: "fixed"}}>
                                     <button
                                         onClick={this.resetScreen}
                                         className="submit"
