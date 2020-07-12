@@ -183,7 +183,7 @@ def getRating():
             for x in test_player.columns:
                 test_player[x] = test_player[x].astype(player_train_dtypes_dict[x])
             pred = player_model.predict(test_player)[0]
-            player_data['rating'] = str(pred)
+            player_data['rating'] = str(round(pred, 2))
             final_players_data.append(player_data)
     return jsonify(final_players_data)
 
