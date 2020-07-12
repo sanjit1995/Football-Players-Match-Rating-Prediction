@@ -1,7 +1,6 @@
 # Import Libraries
 from flask import Flask, request, jsonify, render_template
 import pandas as pd
-import json
 import pickle
 import numpy as np
 
@@ -16,11 +15,11 @@ def render_react():
 @app.route('/getRating', methods=['POST'])
 def getRating():
     #print(request.json)
-    with open(r'models/scaler_model_from_pickle1.pkl', 'rb') as fs:
+    with open('/models/scaler_model_from_pickle1.pkl', 'rb') as fs:
         scaler = pickle.load(fs)
-    with open(r'models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
+    with open('/models/keeper_model_svr_from_pickle1.pkl', 'rb') as fk:
         keeper_model = pickle.load(fk)
-    with open(r'models/player_model_xgb_from_pickle1.pkl', 'rb') as fp:
+    with open('/models/player_model_xgb_from_pickle1.pkl', 'rb') as fp:
         player_model = pickle.load(fp)
     # scaler = joblib.load(r'models/scaler_minutes_played.pkl')
     # keeper_model = joblib.load(r'models/keeper_model_svr.pkl')
