@@ -100,7 +100,7 @@ def getRating():
             for x in test_keeper.columns:
                 test_keeper[x] = test_keeper[x].astype(keeper_train_dtypes_dict[x])
             pred = keeper_model.predict(test_keeper)[0]
-            player_data['rating'] = str(pred)
+            player_data['rating'] = str(float("{:.1f}".format(pred)))
             final_players_data.append(player_data)
         else:
             test_player = pd.DataFrame(
