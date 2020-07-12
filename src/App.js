@@ -291,9 +291,7 @@ class App extends React.Component {
                 method: "POST",
                 cache: "no-cache",
                 headers: {
-                    "content-type": "application/json",
-                    "accept": "*/*",
-                    "connection": "keep-alive"
+                    "Content-Type": "application/json"
                 },
                 body: body_data
             })
@@ -803,7 +801,7 @@ class App extends React.Component {
                                     </tr>
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", marginTop: "450px", position: "fixed"}}>
+                                <div style={{textAlign: "left", paddingTop: "450px", position: "fixed"}}>
                                     <button
                                         onClick={this.submitAll}
                                         className="submit"
@@ -814,8 +812,7 @@ class App extends React.Component {
                                             cursor: "pointer",
                                             border: "none",
                                             height: "50px",
-                                            margin: "4px 2px",
-                                            padding: "8px 16px",
+                                            padding: "8px 8px",
                                             boxSizing: "border-box",
                                             alignContent: 'left',
                                             position: "fixed",
@@ -887,7 +884,7 @@ class App extends React.Component {
                                     ))}
                                     </tbody>
                                 </table>
-                                <div style={{textAlign: "left", marginTop: "450px", position: "fixed"}}>
+                                <div style={{textAlign: "left", paddingTop: "450px", position: "fixed"}}>
                                     <button
                                         onClick={this.resetScreen}
                                         className="submit"
@@ -898,8 +895,7 @@ class App extends React.Component {
                                             cursor: "pointer",
                                             border: "none",
                                             height: "50px",
-                                            margin: "4px 2px",
-                                            padding: "8px 16px",
+                                            padding: "8px 8px",
                                             boxSizing: "border-box",
                                             alignContent: 'left',
                                             position: "fixed",
