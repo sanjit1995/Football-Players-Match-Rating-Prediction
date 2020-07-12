@@ -109,22 +109,36 @@ class App extends React.Component {
         const {currentInput} = this.state;
         if (this.state.role === "") {
             return 0
-        } else if (this.state.role === "Keeper") {
+        }
+        else if (this.state.role === "Keeper") {
+            let keeper_count = 0
             for (let fields of keeper_fields) {
                 console.log(currentInput[fields])
-                if (currentInput[fields].length < 0) {
-                    return 0
+                if (currentInput[fields].length > 0) {
+                    keeper_count += 1
                 }
             }
-            return 1
-        } else {
+            if (keeper_count === keeper_fields.length){
+                return 1
+            }
+            else{
+                return 0
+            }
+        }
+        else {
+            let player_count = 0
             for (let fields of player_fields) {
                 console.log(currentInput[fields])
                 if (currentInput[fields].length < 0) {
-                    return 0
+                    player_count += 1
                 }
             }
-            return 1
+            if (player_count === player_fields.length){
+                return 1
+            }
+            else{
+                return 0
+            }
         }
     }
 
