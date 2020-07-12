@@ -129,7 +129,7 @@ class App extends React.Component {
             let player_count = 0
             for (let fields of player_fields) {
                 console.log(currentInput[fields])
-                if (currentInput[fields].length < 0) {
+                if (currentInput[fields].length > 0) {
                     player_count += 1
                 }
             }
